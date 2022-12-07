@@ -188,9 +188,10 @@ Depois dos _plugins_ instalados serão adicionados os `alias` a seguir no arquiv
 
 ```bash
 alias ls="exa --icons"
-alias catbat="bat --style=auto"
+alias bat="batcat --style=auto"
 ```
 
+Lembrar de fechar e abrir o terminal para as configurações serem validadas.
 
 ## Ferramentas
 O `asdf` é uma ferramenta que permite gerenciar várias versões e linguagens de `frameworks`, ele está sendo mensionado para ficar registrado caso futuramente seja necessário.
