@@ -2,7 +2,7 @@
 Esse repositório terá o passo a passo utilizado para configurar meu ambiente de trabalho com Windows e Linux.
 
 ## Debloat no Windows 11 (Em Construção)
-Utilizar o [Win Debloat Tools](https://github.com/LeDragoX/Win-Debloat-Tools) que é uma coleção de _scripts) que permitem ajustar o Windows 10+ melhorando o desempenho, aumentando a privacidade e realizando outras alterações.
+Utilizar o [Win Debloat Tools](https://github.com/LeDragoX/Win-Debloat-Tools) que é uma coleção de _scripts_ que permitem ajustar o Windows 10+ melhorando o desempenho, aumentando a privacidade e realizando outras alterações.
 
 ## Subsistema Windows para Linux (Windows Subsystem for Linux - WSL2)
 A primeira coisa que deve ser feita é instalar o WSL2 pelo Windows PowerShell com `wsl --install`, e depois o Windows Terminal pela Microsoft Store.
@@ -133,9 +133,13 @@ export PATH=/usr/local/bin:$HOME/.local/bin:$PATH
 
 É necessário fechar e abrir o terminal para que as configurações do _PATH_ sejam validadas.
 
+Nas configurações do `lvim` será retirado o número de linha relativo, para isso deve ser aberto o `~/.config/lvim/config.lua` e alterado a opção `vim.opt.relativenumber = true` para `vim.opt.relativenumber = false`.
+
 
 ## _Plugins_ Úteis
 Serão listados alguns `plugins` interessantes para conhecimento, mas só será mostrado a instalação dos que serão utilizados:
+
+* [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting): Destaca os comandos enquanto eles são digitados. Se o comando estiver correto, ele será exibido na cor verde, caso contrário, o comando ficará em vermelho.
 
 * [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions): Sugere comandos conforme se digita com base no histórico.
 
