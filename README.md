@@ -1,10 +1,10 @@
-## Configuração do meu Workspace
+## Configuração do meu _Workspace_
 Esse repositório terá o passo a passo utilizado para configurar meu ambiente de trabalho com Windows e Linux.
 
 ## Debloat no Windows 11 (Em Construção)
 Utilizar o [Win Debloat Tools](https://github.com/LeDragoX/Win-Debloat-Tools) que é uma coleção de _scripts_ que permitem ajustar o Windows 10+ melhorando o desempenho, aumentando a privacidade e realizando outras alterações.
 
-## Subsistema Windows para Linux (Windows Subsystem for Linux - WSL2)
+## Subsistema Windows para Linux (_Windows Subsystem for Linux_ - WSL2)
 A primeira coisa que deve ser feita é instalar o WSL2 pelo Windows PowerShell com `wsl --install`, e depois o Windows Terminal pela Microsoft Store.
 
 > ℹ️ **_INFO_**  
@@ -12,7 +12,7 @@ A primeira coisa que deve ser feita é instalar o WSL2 pelo Windows PowerShell c
 
 
 ## Temas do Windows Terminal
-Será colocado o tema Dracula no Windows Terminal Themes, para isso deve ser aberto o https://windowsterminalthemes.dev/?theme=Dracula, clicar em `Get theme` para copiar as configurações em ````````````````JSON```````````````` para o _clipboard_, agora deve ser acessado as configurações do Terminal e ir em `Abrir o arquivo JSON`, e após o último tema deve ser colocado uma virgula e colar o JSON copiado anteriormente.
+Será colocado o tema Dracula no _Windows Terminal Themes_, para isso deve ser aberto o https://windowsterminalthemes.dev/?theme=Dracula, clicar em `Get theme` para copiar as configurações em ````````````````JSON```````````````` para o _clipboard_, agora deve ser acessado as configurações do Terminal e ir em `Abrir o arquivo JSON`, e após o último tema deve ser colocado uma virgula e colar o JSON copiado anteriormente.
 
 ```json
 {
@@ -42,7 +42,7 @@ Será colocado o tema Dracula no Windows Terminal Themes, para isso deve ser abe
 Para mudar a configuração deve ser acessado o Ubuntu no menu, ir em Aparência e mudar o tema para Dracula.
 
 
-# Shell
+# _Shell_
 Será instalado o `Zsh` para substituir o `Bash`:
 
 ```bash
@@ -154,7 +154,7 @@ Será instalado o _plugin_ `bat` com:
 sudo apt install bat
 ```
 
-O outro _plugin_ que será instalado é o `exa`, caso seja utilizado a versão do Ubuntu 20.10 (Groovy Gorilla) ou superior, pode ser instalado com:
+O outro _plugin_ que será instalado é o `exa`, caso seja utilizado a versão do Ubuntu 20.10 (Groovy Gorilla) ou superior, poderá ser instalado com:
 
 ```bash
 sudo apt install exa
@@ -162,7 +162,7 @@ sudo apt install exa
 
 Caso contrário, terá que ser feita a instalação manual seguindo os procedimentos a seguir:
 
-Deve ser obtida a _tag_ da versão mais recente de lançamento do exa e atribui-lá à variável `EXA_VERSION`:
+Deve ser obtida a _tag_ da versão mais recente de lançamento do `exa` e atribui-lá à variável `EXA_VERSION`:
 
 ```bash
 EXA_VERSION=$(curl -s "https://api.github.com/repos/ogham/exa/releases/latest" | grep -Po '"tag_name": "v\K[0-9.]+')
@@ -211,7 +211,7 @@ ln -s /mnt/c/Users/Esmael\ Caliman\ Filho Windows
 ```
 
 
-## Roadmap
+## _Roadmap_
 
 Será listado algumas ferramentas que faltaram (ou não) nesse documento, para posteriormente serem estudadas e incluídas.
 
