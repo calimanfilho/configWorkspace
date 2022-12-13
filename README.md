@@ -73,7 +73,7 @@ Outra configuração que deve ser feita, é adicionar os `alias` normalmente uti
 	aa = !git add . && git add -u . && git status
 	c = commit
 	cm = commit -m
-	ca = commit --amend # careful
+	ca = commit --amend
 	ac = !git add . && git commit
 	acm = !git add . && git commit -m
 	l = log --graph --all --pretty=format:'%C(yellow)%h%C(cyan)%d%Creset %s %C(white)- %an, %ar%Creset'
