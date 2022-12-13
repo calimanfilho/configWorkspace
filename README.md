@@ -8,7 +8,7 @@ Utilizar o [Win Debloat Tools](https://github.com/LeDragoX/Win-Debloat-Tools) qu
 A primeira coisa que deve ser feita é instalar o WSL2 pelo Windows PowerShell com `wsl --install`, e depois o Windows Terminal pela Microsoft Store.
 
 > ℹ️ **_INFO_**  
-> Caso seja utilizado a disitribuição Ubuntu, ela é automaticamente instalada, mas para o Arch Linux a Microsoft ainda não possui suporte oficial, mas distribuição pode ser baixada pelo projeto https://github.com/yuk7/ArchWSL. 
+> Caso seja utilizado a distribuição Ubuntu, ela é automaticamente instalada, mas para o Arch Linux a Microsoft ainda não possui suporte oficial, mas distribuição pode ser baixada pelo projeto https://github.com/yuk7/ArchWSL. 
 
 
 ## Temas do Windows Terminal
@@ -42,6 +42,21 @@ Será colocado o tema Dracula no _Windows Terminal Themes_, para isso deve ser a
 Para mudar a configuração deve ser acessado o Ubuntu no menu, ir em Aparência e mudar o tema para Dracula.
 
 
+# Git
+Para iniciar será necessário instalar o Git no [Windows](http://git-scm.com/download/win) e no [Linux](https://git-scm.com/download/linux) do WSL2. Após a instalação será feita a configuração a seguir:
+
+```bash
+git config --global user.name "Esmael Caliman Filho"
+git config --global user.email "calimanfilho@gmail.com"git config --list
+```
+
+Após essa configuração, deverá ser gerado um _token_ de acesso pessoal no GitHub, para quando for realizado algum comando que exija autenticação, como o `clone`, `pull` ou `push`, ser informado o _token_ no local da senha. Para que só precise ser informado o _token_ uma única vez no ambiente local, deverá ser usado o comando abaixo:
+
+```bash
+git config --global credential.helper cache
+```
+
+
 # _Shell_
 Será instalado o `Zsh` para substituir o `Bash`:
 
@@ -54,6 +69,7 @@ Próximo passo é instalar o [Oh My Zsh](https://github.com/ohmyzsh/ohmyzsh), es
 ```bash
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
+
 O script solicitará para mudar o _default_ _shell_ para Zsh, basta confirmar.
 
 Para verificar o _shell_ padrão basta utilizar `grep calimanfilho /etc/passwd`, senco `calimanfilho` o nome de usuário.
