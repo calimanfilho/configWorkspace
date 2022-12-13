@@ -129,9 +129,18 @@ Por fim, ao fechar e abrir o Terminal irá aparecer o assistente de configuraç�
 
 
 # Editor de Texto
-Como editor padrão será utilizado o Visual Studio Code, como outra opção pode ser utilizado o VSCodium que é uma alternativa mais leve e com maior privacidade. Também será configurado o Vim para uso do editor de texto no Terminal, em específico o _fork_ do Vim chamado de Neovim, com uma IDE chamada de LunarVim. 
+Como editor padrão será utilizado o Visual Studio Code, como outra opção pode ser utilizado o VSCodium que é uma alternativa mais leve e com maior privacidade. O arquivo de configuração do Visual Studio Code terá as seguintes configurações:
 
-A [instalação do Neovim](https://github.com/neovim/neovim/wiki/Installing-Neovim) será feita de forma manual, nesse documento será instalado o Neovim 0.9.0, atualmente no repositório do Ubuntu ainda não possui a v0.9.0, a solução será compilar do zero (ou baixar um AppImage quando disponível).
+```json
+{
+    "files.autoSave": "afterDelay",
+    "workbench.colorTheme": "Dracula",
+    "terminal.integrated.defaultProfile.windows": "Ubuntu (WSL)",
+    "terminal.integrated.fontFamily": "MesloLGS NF",
+}
+```
+
+Também será configurado o Vim para uso do editor de texto no Terminal, em específico o _fork_ do Vim chamado de Neovim, com uma IDE chamada de LunarVim. A [instalação do Neovim](https://github.com/neovim/neovim/wiki/Installing-Neovim) será feita de forma manual, nesse documento será instalado o Neovim 0.9.0, atualmente no repositório do Ubuntu ainda não possui a v0.9.0, a solução será compilar do zero (ou baixar um AppImage quando disponível).
 
 Antes de tudo deve ser removido a versão atual do Neovim no sistema, caso tenha alguma:
 
