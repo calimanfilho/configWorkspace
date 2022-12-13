@@ -7,10 +7,10 @@ Utilizar o [Win Debloat Tools](https://github.com/LeDragoX/Win-Debloat-Tools) qu
 
 
 ## Subsistema Windows para Linux (_Windows Subsystem for Linux_ - WSL2)
-A primeira coisa que deve ser feita é instalar o WSL2 pelo Windows PowerShell com `wsl --install`, e depois o Windows Terminal pela Microsoft Store.
+A primeira coisa que deve ser feita é instalar o WSL2 pelo Windows PowerShell com `wsl --install` e o Windows Terminal pela Microsoft Store.
 
 > ℹ️ **_INFO_**  
-> Caso seja utilizado a distribuição Ubuntu, ela é automaticamente instalada, mas para o Arch Linux a Microsoft ainda não possui suporte oficial, mas distribuição pode ser baixada pelo projeto https://github.com/yuk7/ArchWSL. 
+> Caso seja utilizado a distribuição Ubuntu, ela é automaticamente instalada, mas para o Arch Linux a Microsoft ainda não possui suporte oficial, mas a distribuição pode ser baixada pelo projeto https://github.com/yuk7/ArchWSL. 
 
 
 ## Temas do Windows Terminal
@@ -58,7 +58,7 @@ Após essa configuração, deverá ser gerado um _token_ de acesso pessoal no Gi
 git config --global credential.helper cache
 ```
 
-Outra configuração que deve ser feita, é adicionar os `alias` normalmente utilizados no `~/.gitconfig`, ao fim o arquivo ficará assim:
+Outra configuração que deve ser feita, é adicionar os `alias` no `~/.gitconfig`, será utilizado o arquivo [gitconfig.default](references/gitconfig.default) do [repositório do binário do macOS](https://github.com/timcharper/git_osx_installer) como referência para a maioria dos `alias`.
 
 ```bash
 [user]
@@ -81,9 +81,7 @@ Outra configuração que deve ser feita, é adicionar os `alias` normalmente uti
 	lg = log --color --graph --pretty=format:'%C(bold white)%h%Creset -%C(bold green)%d%Creset %s %C(bold green)(%cr)%Creset %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
 	llg = log --color --graph --pretty=format:'%C(bold white)%H %d%Creset%n%s%n%+b%C(bold blue)%an <%ae>%Creset %C(bold green)%cr (%ci)' --abbrev-commit
 	d = diff
-	master = checkout master
-	spull = svn rebase
-	spush = svn dcommit
+	main = checkout main
 	alias = !git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\\t => \\2/' | sort
 ```
 
