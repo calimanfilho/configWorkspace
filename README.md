@@ -1,8 +1,10 @@
 ## Configuração do meu _Workspace_
 Esse repositório terá o passo a passo utilizado para configurar meu ambiente de trabalho com Windows e Linux.
 
+
 ## Debloat no Windows 11 (Em Construção)
 Utilizar o [Win Debloat Tools](https://github.com/LeDragoX/Win-Debloat-Tools) que é uma coleção de _scripts_ que permitem ajustar o Windows 10+ melhorando o desempenho, aumentando a privacidade e realizando outras alterações.
+
 
 ## Subsistema Windows para Linux (_Windows Subsystem for Linux_ - WSL2)
 A primeira coisa que deve ser feita é instalar o WSL2 pelo Windows PowerShell com `wsl --install`, e depois o Windows Terminal pela Microsoft Store.
@@ -54,6 +56,35 @@ Após essa configuração, deverá ser gerado um _token_ de acesso pessoal no Gi
 
 ```bash
 git config --global credential.helper cache
+```
+
+Outra configuração que deve ser feita, é adicionar os `alias` normalmente utilizados no `~/.gitconfig`, ao fim o arquivo ficará assim:
+
+```bash
+[user]
+	name = Esmael Caliman Filho
+	email = calimanfilho@gmail.com
+[credential]
+	helper = cache
+[alias]
+	s = status
+	a = !git add . && git status
+	au = !git add -u . && git status
+	aa = !git add . && git add -u . && git status
+	c = commit
+	cm = commit -m
+	ca = commit --amend # careful
+	ac = !git add . && git commit
+	acm = !git add . && git commit -m
+	l = log --graph --all --pretty=format:'%C(yellow)%h%C(cyan)%d%Creset %s %C(white)- %an, %ar%Creset'
+	ll = log --stat --abbrev-commit
+	lg = log --color --graph --pretty=format:'%C(bold white)%h%Creset -%C(bold green)%d%Creset %s %C(bold green)(%cr)%Creset %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+	llg = log --color --graph --pretty=format:'%C(bold white)%H %d%Creset%n%s%n%+b%C(bold blue)%an <%ae>%Creset %C(bold green)%cr (%ci)' --abbrev-commit
+	d = diff
+	master = checkout master
+	spull = svn rebase
+	spush = svn dcommit
+	alias = !git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\\t => \\2/' | sort
 ```
 
 
@@ -216,34 +247,6 @@ Lembrar de fechar e abrir o terminal para as configurações serem validadas.
 
 ## Ferramentas
 O `asdf` é uma ferramenta que permite gerenciar várias versões e linguagens de `frameworks`, ele está sendo mensionado para ficar registrado caso futuramente seja necessário.
-
-
-# _Alias_ para Git
-Para facilitar o uso de comandos Git, será criado um _script_ para adicionas os _alias_:
-```bash
-#git-alias.sh
-git config --global alias.s status
-git config --global alias.a "!git adicionar . && status git"
-git config --global alias.au "!git adicionar -u . && status git"
-git config --global alias.aa "!git adicionar . && git adicionar -u . && status git"
-git config --global alias.c "commit"
-git config --global alias.cm "commit -m"
-git config --global alias.ca "commit --amend"
-git config --global alias.ac "!git adicionar . && git commit"
-git config --global alias.acm "!git adicionar . && git commit -m"
-git config --global alias.l "log --graph --all --pretty=format:'%C(yellow)%h%C(cyan)%d%Creset %s %C(white)- %an, %ar%Creset'"
-git config --global alias.ll "log --stat --abbrev-commit"
-git config --global alias.lg "log --color --graph --pretty=format:'%C(bold white)%h%Creset -%C(bold green)%d%Creset %s %C(bold green)(%cr)%Creset %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative"
-git config --global alias.llg "log --color --graph --pretty=format:'%C(bold white)%H %d%Creset%n%s%n%+b%C(bold blue)%an <%ae>%Creset %C(bold green)%cr (%ci)' --abbrev-commit"
-git config --global alias.d diff
-git config --global alias.main "checkout main"
-git config --global alias.spull "svn rebase"
-git config --global alias.spush "svn dcommit"
-git config --global alias.alias "!git config --list | grep 'alias\.' | sed 's/alias\.\([^=]*\)=\(.*\)/\1\ => \2/' | sort"
-git config --global alias.co checkout
-git config --global alias.last "log -1 HEAD"
-```
-
 
 ## Observações e Dicas
 Lembrar de realiza a copia das chaves privadas para o diretório `$HOME/.ssh/` no Ubuntu, de modo ideal as chaves poderiam ter sido compactada com `tar`, para que ao descompactar utilizando o `tar xvfz` as permissões sejam mantidas, caso tenha sido compactada de outra maneira deverá ser executado o `sudo chmod -R 600 .ssh` para que seja dado permissão de leitura e escrita para o usuário e os outros não poderem ler nem listar os arquivos do diretório.
