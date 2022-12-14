@@ -52,13 +52,19 @@ git config --global user.name "Esmael Caliman Filho"
 git config --global user.email "calimanfilho@gmail.com"git config --list
 ```
 
-Após essa configuração, deverá ser gerado um _token_ de acesso pessoal no GitHub, para quando for realizado algum comando que exija autenticação, como o `clone`, `pull` ou `push`, ser informado o _token_ no local da senha. Para que só precise ser informado o _token_ uma única vez no ambiente local, deverá ser usado o comando abaixo:
+Após a configuração deverá ser adicionado ao `~/.gitconfig`, o [Git Credential Manager](https://github.com/GitCredentialManager/git-credential-manager) para evitar a necessidade de ficar informando a senha a cada comando que exija autenticação, como o `clone`, `pull` ou `push`, como o Git já está instalado no Windows, poderá ser utilizado o executável localizado em `/mnt/c/Program\ Files/Git/mingw64/bin/git-credential-manager-core.exe` com o comando: 
+
+```bash
+git config --global credential.helper "/mnt/c/Program\ Files/Git/mingw64/bin/git-credential-manager-core.exe"
+```
+
+Outro método de autenticação é com o _token_ de acesso pessoal, que é utilizado no local da senha do repositório remoto ao usar a linha de comando. Para diminuir a quantidade de vezes que o _token_ é solicitado, pode ser utilizado o comando abaixo:
 
 ```bash
 git config --global credential.helper cache
 ```
 
-Outra configuração que deve ser feita, é adicionar os `alias` no `~/.gitconfig`, será utilizado o arquivo [gitconfig.default](references/gitconfig.default) do [repositório do binário do macOS](https://github.com/timcharper/git_osx_installer) como referência para a maioria dos `alias`.
+Outra configuração que deve ser feita, é adicionar os `alias` dos comandos no `~/.gitconfig`, será utilizado o arquivo [gitconfig.default](references/gitconfig.default) do [repositório do binário do macOS](https://github.com/timcharper/git_osx_installer) como referência para a maioria dos `alias`.
 
 ```bash
 [user]
