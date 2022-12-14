@@ -162,6 +162,7 @@ cd neovim
 make CMAKE_BUILD_TYPE=RelWithDebInfo
 sudo make install
 ```
+
 > ℹ️ **_INFO_**  
 > Se ocorrer problema ao ler o lfs do Lua, deve ser instalado o LuaRocks com `sudo luarocks install luafilesystem`.
 
@@ -263,6 +264,8 @@ Além disso, pode ser criado um `link simbólico` da pasta de usuário do PC fí
  ```bash
 ln -s /mnt/c/Users/Esmael\ Caliman\ Filho Windows
 ```
+
+Para excluir o histórico de comandos do LunarVim, é necessário utilizar outro editor de texto que não seja o LunarVim para abrir o `~/.cache/lvim/lvim.shada` e deletar os _history entry_ do final do arquivo.
 
 
 ## _Roadmap_
