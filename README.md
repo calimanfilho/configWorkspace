@@ -14,7 +14,7 @@ A primeira coisa que deve ser feita é instalar o WSL2 pelo Windows PowerShell c
 
 
 ## Temas do Windows Terminal
-Será colocado o tema Dracula no _Windows Terminal Themes_, para isso deve ser aberto o https://windowsterminalthemes.dev/?theme=Dracula, clicar em `Get theme` para copiar as configurações em ````````````````JSON```````````````` para o _clipboard_, agora deve ser acessado as configurações do Terminal e ir em `Abrir o arquivo JSON`, e após o último tema deve ser colocado uma virgula e colar o JSON copiado anteriormente.
+Será colocado o tema Dracula no _Windows Terminal Themes_, para isso deve ser aberto o https://windowsterminalthemes.dev/?theme=Dracula, clicar em `Get theme` para copiar as configurações em `JSON` para o _clipboard_, agora deve ser acessado as configurações do Terminal e ir em `Abrir o arquivo JSON`, e após o último tema deve ser colocado uma virgula e colar o JSON copiado anteriormente.
 
 ```json
 {
