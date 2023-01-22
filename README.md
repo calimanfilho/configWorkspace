@@ -14,7 +14,7 @@ A primeira coisa que deve ser feita é instalar o WSL2 pelo Windows PowerShell c
 
 
 ## Temas do Windows Terminal
-Será colocado o tema Dracula no _Windows Terminal Themes_, para isso deve ser aberto o https://windowsterminalthemes.dev/?theme=Dracula, clicar em `Get theme` para copiar as configurações em ````````````````JSON```````````````` para o _clipboard_, agora deve ser acessado as configurações do Terminal e ir em `Abrir o arquivo JSON`, e após o último tema deve ser colocado uma virgula e colar o JSON copiado anteriormente.
+Será colocado o tema Dracula no _Windows Terminal Themes_, para isso deve ser aberto o https://windowsterminalthemes.dev/?theme=Dracula, clicar em `Get theme` para copiar as configurações em `JSON` para o _clipboard_, agora deve ser acessado as configurações do Terminal e ir em `Abrir o arquivo JSON`, e após o último tema deve ser colocado uma virgula e colar o JSON copiado anteriormente.
 
 ```json
 {
@@ -88,7 +88,14 @@ Outra configuração que deve ser feita, é adicionar os `alias` dos comandos no
 	llg = log --color --graph --pretty=format:'%C(bold white)%H %d%Creset%n%s%n%+b%C(bold blue)%an <%ae>%Creset %C(bold green)%cr (%ci)' --abbrev-commit
 	d = diff
 	main = checkout main
-	alias = !git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\\t => \\2/' | sort
+  	plom = pull origin main
+	psom = push origin main
+	spull = svn rebase
+  	spush = svn dcommit
+  	alias = !git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\\t => \\2/' | sort
+  	rbi = rebase -i
+  	rbi5 = git rebase -i HEAD~5
+  	rbi10 = git rebase -i HEAD~10
 ```
 
 
