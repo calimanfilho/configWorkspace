@@ -58,13 +58,13 @@ Após a configuração deverá ser adicionado ao `~/.gitconfig`, o [Git Credenti
 git config --global credential.helper "/mnt/c/Program\ Files/Git/mingw64/bin/git-credential-manager-core.exe"
 ```
 
-Outro método de autenticação é a com a chave SSH, o primeiro passo é executar um comando para saber se já existem chaves ssh na máquina. Por padrão o nome delas devem ser um desses: `id_rsa.pub`, `id_ecdsa.pub` ou `id_ed25519.pub`.
+Outro método de autenticação é a com a chave SSH, o primeiro passo é executar um comando para saber se já existem chaves SSH na máquina. Por padrão o nome delas devem ser um desses: `id_rsa.pub`, `id_ecdsa.pub` ou `id_ed25519.pub`.
 
 ```bash
 ls -al ~/.ssh
 ```
 
-Caso não exista nenhum par de chaves existentes, precisamos gerar um novo par de chaves. Para criar uma chave ed25519, basta executar:
+Caso não exista nenhum par de chaves existentes, será preciso gerar um novo par de chaves. Para criar uma chave ed25519, basta executar:
 
 ```bash
 ssh-keygen -t ed25519 -C "your_email@example.com"
@@ -79,12 +79,12 @@ eval $(ssh-agent -s)
 ssh-add ~/.ssh/id_ed25519
 ```
 
-Agora que a chave privada foi adicionado no ssh-agent, será copiado a chave pública que faz par com ela, para incluir no GitHub, com:
+Após a chave privada ser adicionada no ssh-agent, será copiado a chave pública que faz par com ela, para incluir no GitHub, com:
 
   * No Windows: `clip < ~/.ssh/id_ed25519.pub`. Automaticamente o conteúdo da sua chave pública será copiado para a área de transferência.
   * No Linux: `cat ~/.ssh/id_ed25519.pub`. O conteúdo da chave pública aparecerá no terminal para ser selecionado e copiado.
 
-Para adicionar no Github, basta abrir o [site](https://github.com/), ir ícone de perfil > `Settings`, no canto superior direito.
+Agora para adicionar essa chave pública no local correto, basta abrir o GitHub, ir no ícone de perfil > `Settings`, no canto superior direito.
   1. Na barra lateral de configurações do usuário, deve-se clicar em `SSH and GPG keys`.
   2. Clicar no botão "New SSH key"
   3. No campo "Título", deve ser adicionado um rótulo descritivo para a nova chave.
