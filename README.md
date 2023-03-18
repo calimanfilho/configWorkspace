@@ -58,7 +58,40 @@ Após a configuração deverá ser adicionado ao `~/.gitconfig`, o [Git Credenti
 git config --global credential.helper "/mnt/c/Program\ Files/Git/mingw64/bin/git-credential-manager-core.exe"
 ```
 
-Outro método de autenticação é com o _token_ de acesso pessoal, que é utilizado no local da senha do repositório remoto ao usar a linha de comando. Para diminuir a quantidade de vezes que o _token_ é solicitado, pode ser utilizado o comando abaixo:
+Outro método de autenticação é a com a chave SSH, o primeiro passo é executar um comando para saber se já existem chaves ssh na máquina. Por padrão o nome delas devem ser um desses: `id_rsa.pub`, `id_ecdsa.pub` ou `id_ed25519.pub`.
+
+```bash
+ls -al ~/.ssh
+```
+
+Caso não exista nenhum par de chaves existentes, precisamos gerar um novo par de chaves. Para criar uma chave ed25519, basta executar:
+
+```bash
+ssh-keygen -t ed25519 -C "your_email@example.com"
+```
+
+Agora é preciso adicionar chave privada no ssh-agent. O ssh-agent é um gerenciador de chaves SSH. Para que a conexão funcione, é necessário adicionar a chave privada nesse gerenciador. Para isso será executado os códigos:
+
+```bash
+# Rodar o ssh-agent
+eval $(ssh-agent -s)
+# Incluir a chave privada
+ssh-add ~/.ssh/id_ed25519
+```
+
+Agora que a chave privada foi adicionado no ssh-agent, será copiado a chave pública que faz par com ela, para incluir no GitHub, com:
+
+  * No Windows: `clip < ~/.ssh/id_ed25519.pub`. Automaticamente o conteúdo da sua chave pública será copiado para a área de transferência.
+  * No Linux: `cat ~/.ssh/id_ed25519.pub`. O conteúdo da chave pública aparecerá no terminal para ser selecionado e copiado.
+
+Para adicionar no Github, basta abrir o [site](https://github.com/), ir ícone de perfil > `Settings`, no canto superior direito.
+  1. Na barra lateral de configurações do usuário, deve-se clicar em `SSH and GPG keys`.
+  2. Clicar no botão "New SSH key"
+  3. No campo "Título", deve ser adicionado um rótulo descritivo para a nova chave.
+  4. No campo "Chave", deve ser adicionado a chave pública que está na área de transferência.
+  5. E para concluir, clicar em `Add SSH key` e pronto!
+
+Por fim, também pode ser utilizado a autenticação por _token_ de acesso pessoal, que é utilizado no local da senha do repositório remoto ao usar a linha de comando. Para diminuir a quantidade de vezes que o _token_ é solicitado, pode ser utilizado o comando abaixo:
 
 ```bash
 git config --global credential.helper cache
