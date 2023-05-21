@@ -302,6 +302,7 @@ Lembrar de fechar e abrir o terminal para as configurações serem validadas.
 ## Ferramentas
 O `asdf` é uma ferramenta que permite gerenciar várias versões e linguagens de `frameworks`, ele está sendo mensionado para ficar registrado caso futuramente seja necessário.
 
+
 ## Observações e Dicas
 Lembrar de realiza a copia das chaves privadas para o diretório `$HOME/.ssh/` no Ubuntu, de modo ideal as chaves poderiam ter sido compactada com `tar`, para que ao descompactar utilizando o `tar xvfz` as permissões sejam mantidas, caso tenha sido compactada de outra maneira deverá ser executado o `sudo chmod -R 600 .ssh` para que seja dado permissão de leitura e escrita para o usuário e os outros não poderem ler nem listar os arquivos do diretório.
 
@@ -326,6 +327,20 @@ Será listado algumas ferramentas que faltaram (ou não) nesse documento, para p
 - [ ] [kubectl](https://kubernetes.io/docs/tasks/tools/)
 - [ ] [Ansible](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html)
 - [ ] [Terraform](https://developer.hashicorp.com/terraform/downloads)
+
+
+# AppImage
+
+Para instalar alguns programas será necessário utilizar o AppImage, caso o Linux não possua o programa, será necessário instalar com os comandos abaixo:
+
+``` bash
+sudo add-apt-repository ppa:appimagelauncher-team/stable
+sudo apt-get update
+sudo apt-get install appimagelauncher
+```
+
+> ℹ️ **_INFO_**  
+> Os pacotes Snaps, Flatpaks e AppImage são como containers onde todos os arquivos e bibliotecas necessários são executados sem depender das bibliotecas que cada sistema Linux possui
 
 
 ## Referências
