@@ -49,7 +49,8 @@ Para iniciar será necessário instalar o Git no [Windows](http://git-scm.com/do
 
 ```bash
 git config --global user.name "Esmael Caliman Filho"
-git config --global user.email "calimanfilho@gmail.com"git config --list
+git config --global user.email "calimanfilho@gmail.com"
+git config --list
 ```
 
 Após a configuração deverá ser adicionado ao `~/.gitconfig`, o [Git Credential Manager](https://github.com/GitCredentialManager/git-credential-manager) para evitar a necessidade de ficar informando a senha a cada comando que exija autenticação, como o `clone`, `pull` ou `push`, como o Git já está instalado no Windows, poderá ser utilizado o executável localizado em `/mnt/c/Program\ Files/Git/mingw64/bin/git-credential-manager-core.exe` com o comando: 
