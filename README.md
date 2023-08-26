@@ -230,7 +230,7 @@ Como o `lvim` ainda não foi adicionado nas configurações do _shell_, ele pode
 Agora deverá ser adicionado o _PATH_ do `nvim` e do `lvim` no `~/.zshrc`, para que o comando possa ser executado sem a necessidade de informar o caminho completo. Para isso deverá ser executado o `vim ~/.zshrc`, e adicionar ao fim do arquivo a linha abaixo:
 
 ```bash
-export PATH=/usr/local/bin:$HOME/.local/bin:$PATH
+export PATH=$HOME/.local/bin:$HOME/.cargo/bin$PATH
 ```
 
 É necessário fechar e abrir o terminal para que as configurações do _PATH_ sejam validadas.
