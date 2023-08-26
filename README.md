@@ -262,34 +262,6 @@ O outro _plugin_ que será instalado é o `exa`, caso seja utilizado a versão d
 sudo apt install exa
 ```
 
-Caso contrário, terá que ser feita a instalação manual seguindo os procedimentos a seguir:
-
-Deve ser obtida a _tag_ da versão mais recente de lançamento do `exa` e atribui-lá à variável `EXA_VERSION`:
-
-```bash
-EXA_VERSION=$(curl -s "https://api.github.com/repos/ogham/exa/releases/latest" | grep -Po '"tag_name": "v\K[0-9.]+')
-```
-
-Realiza o `download` do arquivo `zip` da página de lançamento do repositório `exa` dando o nome de `exa.zip`:
-
-```bash
-curl -Lo exa.zip "https://github.com/ogham/exa/releases/latest/download/exa-linux-x86_64-v${EXA_VERSION}.zip"
-```
-
-Extrai somente o arquivo binário da pasta `/bin/exa` do arquivo ZIP e move para `/usr/local`:
-
-```bash
-sudo unzip -q exa.zip bin/exa -d /usr/local
-```
-
-Agora o comando `exa` está disponível para todos os usuários, o arquivo `.zip` já pode ser excluído:
-
-```bash
-rm -rf exa.zip
-```
-
-Para checar se tudo foi instalado corretamente, pode ser utilizado o comando `exa --version`.
-
 Depois dos _plugins_ instalados serão adicionados os `alias` a seguir no arquivo `.zshrc` para facilitar o uso do comando:
 
 ```bash
